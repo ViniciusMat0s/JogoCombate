@@ -1,0 +1,200 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Centraliza vertical */
+    align-items: center;
+    /* Centraliza horizontal */
+    padding: 20px;
+}
+
+/* Container principal (fight-bar + log) */
+main,
+section {
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Área de combate */
+.fight-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    margin-bottom: 15px;
+    /* Espaço pro log colado */
+}
+
+/* Player e Monstro */
+#char,
+#monster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Nome */
+.name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #ffeb3b;
+    text-shadow: 0 0 10px #ffeb3b80;
+}
+
+/* Barra de vida */
+.lifebar {
+    width: 100%;
+    height: 25px;
+    border-radius: 12px;
+    border: 2px solid #444;
+    background: #2d2d2d;
+    overflow: hidden;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.6);
+}
+
+.lifebar .bar {
+    height: 100%;
+    background: linear-gradient(90deg, #e53935, #ff1744);
+    transition: width 0.5s ease-in-out;
+}
+
+/* Botão */
+.attackButton {
+    margin-top: 15px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(255, 87, 34, 0.5);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.attackButton:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 20px rgba(255, 87, 34, 0.7);
+}
+
+.attackButton:active {
+    transform: scale(0.95);
+}
+
+/* Log de batalha */
+.log {
+    list-style: none;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    /* ocupa toda a largura do container */
+    height: 200px;
+    /* altura fixa */
+    overflow-y: auto;
+    /* ativa scroll vertical */
+    font-family: "Courier New", monospace;
+    font-size: 0.95rem;
+    color: #90ee90;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+
+.log li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+    border-left: 3px solid #90ee90;
+}
+
+/* Scroll custom */
+.log::-webkit-scrollbar {
+    width: 8px;
+}
+
+.log::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.log::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* Animação para mensagens novas */
+.log li {
+    margin-bottom: 8px;
+    padding-left: 10px;
+    border-left: 3px solid #90ee90;
+    opacity: 0;
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.arena {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 300px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.fighter {
+    position: absolute;
+    bottom: 0;
+    max-height: 250px;
+    z-index: 2;
+}
+
+.char {
+    left: 10%;
+}
+
+.monster {
+    right: 10%;
+    transform: scaleX(-1);
+}
