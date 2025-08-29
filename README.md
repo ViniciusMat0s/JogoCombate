@@ -1,6 +1,5 @@
 # Minigame de combate
-## Projeto desenvolvido para o módulo de JavaScript Avançado do curso Full Stack da B7WEB.
-##
+#### Projeto desenvolvido para o módulo de JavaScript Avançado do curso Full Stack da B7WEB.
 Um minigame de luta entre dois personagens, criado para exercitar e estudar programação funcional, além da manipulação do DOM e eventos em tempo real.
 ##
 Neste projeto estudamos as seguintes propriedades:<br>
