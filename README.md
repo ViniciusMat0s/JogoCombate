@@ -14,5 +14,7 @@ Um minigame de luta entre dois personagens, criado para exercitar e estudar prog
 
 #### 💡Destaques do projeto: lógica de ataque/defesa com valores aleatórios, log de batalha em tempo real e barras de vida dinâmicas.
 
+##
+
 ### Confira a publicação deste projeto no LinkedIn:
 https://www.linkedin.com/posts/viniciusmat0s_boa-noite-devs-compartilho-com-voc%C3%AAs-activity-7366994945322237953-8s3y?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAD_IPGwBmdgH_w0-ErC1szE1HJjWd7E146M
